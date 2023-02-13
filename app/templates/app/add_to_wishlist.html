@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+{% load static %}   
+{% block title %}Wishlist{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+    <div class="row">
+        {% if wishlist %}
+        <h1 class="text-center mb-8">Wishlist</h1>
+        <div class="">
+            <div class="card">
+                <div class="card-body shadow">
+                    <h3 class='text-center'>Items</h3>
+                    <hr>
+                    {% for item in wishlist %}
+                    <div class="row">
+                        <div class="col-sm-3 text-center align-self-center"><img src="{{item.product.product_image.url}}" alt="" class="img-fluid img-thumbnail shadow-sm" height="150" width="150">
+                        </div>
+                        <div class="col-sm-9">
+                            <div>
+                                <h5>{{item.product.title}}</h5>
+                                <p class="mb=2 text-muted small">{{item.product.description}}</p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="minus-wishlist btn btn-sm btn-danger mr-3" pid={{item.product.id}}>Remove item</a>
+                                    <p class="mb-0"><span><strong>Rs. {{item.product.discount_price}}</strong></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="text-muted">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+            <h1 clss="text-center mb-5">No Wishlist</h1>
+        {% endif %}
+    </div>
+</div>
+{% endblock main-content %} 
