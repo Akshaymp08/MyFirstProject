@@ -1,2 +1,2 @@
 # MyFirstEcommerceProject
-This my first Ecommerce Web Application Project done for studying purpose
+This is my first Ecommerce Web Application Project done for studying purpose
